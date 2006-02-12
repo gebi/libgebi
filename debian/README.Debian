@@ -1,0 +1,24 @@
+libgebi for Debian GNU/Linux
+============================
+
+This is the package with my multithreading design patterns.
+home of this package is currently <http://einsteinmg.dyndns.org/projects/cpp>
+
+About the package
+-----------------
+
+This is a headfile only package.
+There is no static lib.
+You should only include the headerfile you need.
+The threading stuff should also work in windows (not tested yet).
+
+Using Loki on Debian GNU/Linux
+------------------------------
+
+First off, all header files have been moved from /usr/include to
+/usr/include/gebi, which means that you should include the directory in the
+include directive. E.g.:
+
+  #include <gebi/singleton.hpp>
+
+ -- Michael Gebetsroither <michael.geb@gmx.at>  Mo, 27 Jun 2005 11:00:37 +0100

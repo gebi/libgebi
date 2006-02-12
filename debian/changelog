@@ -1,0 +1,53 @@
+libgebi-dev (0.07) unstable; urgency=low
+
+  * next release, completed splitting up ZCRunQueue with spezialisation for
+    void*
+  * make NullMutex also a null mutex for RWLock
+  * remove NullRWMutex
+  * add aquire() and release() to Guard 
+
+ -- Michael Gebetsroither <michael.geb@gmx.at>  Fri, 15 Jul 2005 14:34:48 +0200
+
+libgebi-dev (0.06) unstable; urgency=low
+
+  * fixed a few small bugs in threads.hpp
+  * rewrote run_queue.hpp (splittet in RunQueueBase / RunQueue / ZCRunQueue)
+
+ -- Michael Gebetsroither <michael.geb@gmx.at>  Tue, 12 Jul 2005 18:03:24 +0200
+
+libgebi-dev (0.05) unstable; urgency=low
+
+  * make RunQueue multithreading safe
+  * fixed default template parameter for Counter
+
+ -- Michael Gebetsroither <michael.geb@gmx.at>  Sun,  3 Jul 2005 22:49:57 +0200
+
+libgebi-dev (0.04) unstable; urgency=low
+
+  * added counter.hpp
+  * added RWMutex for Windows (not really an RWMutex, but the same as
+    ThreadMutex)
+  * added run_queue.hpp (O(1) priority queue for a fixed, known number of
+    priorities) 
+
+ -- Michael Gebetsroither <michael.geb@gmx.at>  Sun,  3 Jul 2005 06:19:34 +0200
+
+libgebi-dev (0.03) unstable; urgency=low
+
+  * Removed GuardR GuardW, unified to Guard with template template parameter 
+
+ -- Michael Gebetsroither <michael.geb@gmx.at>  Thu, 30 Jun 2005 08:23:16 +0200
+
+libgebi-dev (0.02) unstable; urgency=low
+
+  * Integrate read/write locks in threads.hpp
+  * Adapt factory.hpp to read/write mutex 
+
+ -- Michael Gebetsroither <michael.geb@gmx.at>  Mon, 27 Jun 2005 23:51:06 +0200
+
+libgebi-dev (0.01) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Michael Gebetsroither <michael.geb@gmx.at>  Mon, 27 Jun 2005 11:57:20 +0100
+

@@ -7,9 +7,9 @@ using std::endl;
 
 
 #ifdef _MT_SUPPORT_
-typedef Gebi::Counter<unsigned, Gebi::RWMutex> COUNTER;
+typedef gebi::Counter<unsigned, gebi::RWMutex> COUNTER;
 #else
-typedef Gebi::Counter<unsigned, Gebi::NullMutex> COUNTER;
+typedef gebi::Counter<unsigned, gebi::NullMutex> COUNTER;
 #endif
 
 

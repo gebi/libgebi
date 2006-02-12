@@ -17,7 +17,7 @@ using std::list;
 #include <stdexcept>
 using std::runtime_error;
 
-namespace Gebi
+namespace gebi
 {
 
   /* NOTE

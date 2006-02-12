@@ -1,5 +1,5 @@
 #include "run_queue.hpp"
-using namespace Gebi;
+using namespace gebi;
 
 #include <iostream>
 #include <memory>

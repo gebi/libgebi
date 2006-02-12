@@ -12,7 +12,7 @@
 #include <utility>
 #include <stdexcept>
 
-namespace Gebi
+namespace gebi
 {
   namespace FactoryPrivate
   {
@@ -89,7 +89,7 @@ namespace Gebi
           throw std::runtime_error(ident.c_str());
       }
   };
-} // end namespace Gebi
+} // end namespace gebi
 
 #endif
 // vim:foldmethod=marker

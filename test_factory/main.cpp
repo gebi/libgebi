@@ -1,5 +1,5 @@
 #include "factory.hpp"
-using namespace Gebi;
+using namespace gebi;
 
 #include <iostream>
 #include <stdexcept>

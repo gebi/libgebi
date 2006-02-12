@@ -3,7 +3,7 @@
 
 #include <pthread.h>
 
-namespace Gebi
+namespace gebi
 {
 
   /* NOTE:
@@ -183,7 +183,7 @@ namespace Gebi
   };
   // }}}
 
-} // end namespace Gebi
+} // end namespace gebi
 
 // vim:foldmethod=marker
 #endif

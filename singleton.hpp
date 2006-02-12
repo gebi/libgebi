@@ -7,7 +7,7 @@
 #include <gebi/threads.hpp>
 #endif
 
-namespace Gebi
+namespace gebi
 {
 
   /*
@@ -78,7 +78,7 @@ namespace Gebi
   template <class T, template<class> class C, class M>
   T* Singleton<T,C,M>::instance_=0;
 
-} // end namespace Gebi
+} // end namespace gebi
 
 #endif
 // vim:foldmethod=marker

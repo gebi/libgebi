@@ -1,5 +1,5 @@
-#ifndef counter_hpp___
-#define counter_hpp___
+#ifndef ___counter_hpp___
+#define ___counter_hpp___
 
 #ifdef TEST_COMPILE
 #include "threads.hpp"
@@ -7,7 +7,7 @@
 #include <gebi/threads.hpp>
 #endif
 
-namespace Gebi
+namespace gebi
 {
 
   // class Counter  {{{
@@ -67,7 +67,7 @@ namespace Gebi
       }
   }; // }}}
 
-} // end namespace gebi
+} // namespace gebi
 
 // vim:foldmethod=marker
 #endif

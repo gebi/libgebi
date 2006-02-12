@@ -11,6 +11,6 @@ Architecture: all
 Description: a C++ library of generic design patterns
  A few multithreaded design patterns.
  .
- ATTENTION: THE CLASSES IN THIS PACKAGE ARE LICKELY TO CHANGE
- VERY OFTEN!! Because this is my playground c++ lib.
- Use this lib only through fix integration into your program.
+ ATTENTION: THE CLASSES IN THIS PACKAGE ARE LICKELY TO CHANGE.
+ Because this is my playground c++ lib.
+ The recommend way to user this lib is via direct source integration.

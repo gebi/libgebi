@@ -1,5 +1,5 @@
 #include "threads.hpp"
-using namespace Gebi;
+using namespace gebi;
 
 #include <iostream>
 using std::cout;

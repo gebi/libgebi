@@ -1,3 +1,9 @@
+libgebi-dev (0.08) unstable; urgency=low
+
+  * added probability functions 
+
+ -- Michael Gebetsroither <michael.geb@gmx.at>  Sun, 12 Feb 2006 19:23:26 +0100
+
 libgebi-dev (0.07) unstable; urgency=low
 
   * next release, completed splitting up ZCRunQueue with spezialisation for

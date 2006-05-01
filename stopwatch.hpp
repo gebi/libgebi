@@ -12,9 +12,10 @@
 namespace gebi
 {
 
+// null object (is removed during optimization from compiler)
 struct NullNotifier
 {
-    void notify(unsigned long long i) {}
+    void notify(unsigned long long i) { return 0; }
 };
 
 struct CoutNotifier

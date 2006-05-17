@@ -43,8 +43,32 @@ template<class T>
 auto_ptr<T> create(T init)
   { return auto_ptr<T>(new T(init)); }
 
+// DebugMutex {{{
+class DebugMutex
+{ 
+private:
+  static unsigned count_;
+  unsigned count;
+  DebugMutex(const DebugMutex &src);
+  DebugMutex &operator=(const DebugMutex &src);
 
-typedef Factory<Base, std::auto_ptr<Base>, NullMutex> MyFactory;
+public:
+  DebugMutex()  { count = count_++; cerr<<"debugmutex " <<count <<" created\n"; }
+  ~DebugMutex() { cerr<<"debugmutex " <<count <<" destroyed\n"; }
+
+  int aquire()  { return 0; }
+  int release() { return 0; }
+
+  int aquireRead()  { return 0; }
+  int releaseRead() { return 0; }
+
+  int aquireWrite()  { return 0; }
+  int releaseWrite() { return 0; }
+};
+unsigned DebugMutex::count_(0);
+// }}}
+
+typedef Factory<Base, std::auto_ptr<Base>, DebugMutex> MyFactory;
 
 int main()
 {

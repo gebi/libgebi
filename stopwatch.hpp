@@ -4,9 +4,28 @@
 #include <ctime>
 #include <iostream>
 
-
-#define rdtscll(val) \
-    __asm__ __volatile__ ("rdtsc" : "=A" (val))
+// thx to dietlibc 0.30 and 0.27 test/cycles.c
+#if defined (__i386__)
+#define rdtscll(dst) asm volatile ("rdtsc" : "=A" (dst))
+#elif defined (__x86_64__)
+#define rdtscll(dst) do { \
+    uint32_t l, h; \
+    asm volatile ("rdtsc" : "=a" (l), "=d" (h)); \
+    dst = (((uint64_t)h) << 32) | l; \
+} while (0)
+#elif defined (__powerpc64__)
+#define rdtscll(dst) asm volatile ("mftb %0" : "=r" (dst))
+#elif defined (__powerpc__)
+#define rdtscll(dst) do { \
+    uint32_t chk, tbl, tbu; \
+    /* The code below is as suggested in Motorola reference manual for 32 bits PPCs. */ \
+    __asm__ __volatile__ ("1: mftbu %0; mftb %1; mftbu %2; cmpw %2,%0; bne 1b" \
+        : "=r" (tbu), "=r" (tbl), "=r" (chk) ); \
+    dst = ((uint64_t)tbu << 32) | tbl; \
+} while (0)
+#else
+#error "Unimplemented rdtsc"
+#endif
 
 
 namespace gebi
@@ -15,7 +34,7 @@ namespace gebi
 // null object (is removed during optimization from compiler)
 struct NullNotifier
 {
-    void notify(unsigned long long i) { return 0; }
+    void notify(unsigned long long i) { return; }
 };
 
 struct CoutNotifier

@@ -34,12 +34,12 @@ namespace gebi
 // null object (is removed during optimization from compiler)
 struct NullNotifier
 {
-    void notify(unsigned long long i) { return; }
+    static void notify(unsigned long long i) { return; }
 };
 
 struct CoutNotifier
 {
-    void notify(unsigned long long i) { std::cout <<i; }
+    static void notify(unsigned long long i) { std::cout <<i; }
 };
 
 
@@ -51,23 +51,37 @@ public:
         rdtscll(start_);
     }
     ~Stopwatch() {
-        rdtscll(end_);
-        if(stopped_)
-            return;
-        end_ -= start_; //get elapsed time
-        notifier.notify(end_);
+        unsigned long long end;
+        rdtscll(end);
+        if(!stopped_) {
+            stopped_ = true;
+            start_ = end - start_;
+        }
+        Notifier::notify(start_);
     }
     unsigned long long stop() {
-        rdtscll(end_);
-        stopped_ = true;
-        return end_ - start_;
+        unsigned long long end;
+        rdtscll(end);
+        if(!stopped_) {
+            stopped_ = true;
+            start_ = end - start_;
+        }
+        return start_;
     }
-    unsigned long long getTime() { return end_ - start_; }
+    unsigned long long getTime()
+    {
+        if(!stopped_) {
+            unsigned long long end;
+            rdtscll(end);
+            return end - start_;
+        }
+        return start_;
+    }
 
 private:
-    unsigned long long start_, end_;
+    unsigned long long start_;
     bool stopped_;
-    Notifier notifier;
+    //Notifier notifier;
 };
 
 }; // end namespace gebi

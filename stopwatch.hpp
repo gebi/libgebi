@@ -1,7 +1,6 @@
 #ifndef ___stopwatch_hpp___
 #define ___stopwatch_hpp___
 
-#include <ctime>
 #include <iostream>
 
 // thx to dietlibc 0.30 and 0.27 test/cycles.c

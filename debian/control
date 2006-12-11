@@ -2,7 +2,7 @@ Source: libgebi-dev
 Section: libs
 Priority: optional
 Maintainer: Michael Gebetsroither <michael.geb@gmx.at>
-Build-Depends: debhelper (>= 4.0.0), libstdc++-dev
+Build-Depends: debhelper (>= 4.0.0)
 Standards-Version: 3.6.1.1
 
 Package: libgebi-dev
@@ -11,6 +11,6 @@ Architecture: all
 Description: a C++ library of generic design patterns
  A few multithreaded design patterns.
  .
- ATTENTION: THE CLASSES IN THIS PACKAGE ARE LICKELY TO CHANGE,
+ ATTENTION: THE CLASSES IN THIS PACKAGE ARE LIKELY TO CHANGE,
  because this is my playground c++ lib.
  The recommend way to user this lib is via direct source integration.

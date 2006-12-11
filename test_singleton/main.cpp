@@ -1,5 +1,5 @@
 #include <gebi/singleton.hpp>
-using namespace Gebi;
+using namespace gebi;
 
 #include <iostream>
 #include <string>

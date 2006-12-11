@@ -1,3 +1,13 @@
+libgebi-dev (0.09) unstable; urgency=low
+
+  * Added super fast hash function from
+    http://www.azillionmonkeys.com/qed/hash.html
+  * Added rdtsc implementations for amd64, ppc and ppc64 (thx formorer for
+    bugreport)
+  * Shrunk class Stopwatch.
+
+ -- Michael Gebetsroither <michael.geb@gmx.at>  Tue, 12 Dec 2006 00:28:00 +0100
+
 libgebi-dev (0.08) unstable; urgency=low
 
   * added probability functions 

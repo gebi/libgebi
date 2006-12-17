@@ -3,7 +3,7 @@ CC = $(CXX)
 LD = $(CXX)
 
 #CPPFLAGS = -pipe -Wall -O3 -s -DNDEBUG -ansi -pedantic
-CPPFLAGS = -I'../' -DTEST_COMPILE -pipe -Wall -O3 -s -DNDEBUG -funroll-loops -floop-optimize -march=i686 -mtune=i686 -ansi -pedantic
+CPPFLAGS = -I'../' -DTEST_COMPILE -pipe -Wall -O3 -s -DNDEBUG -funroll-loops -floop-optimize -ansi -pedantic
 LDFLAGS =
 
 SUBDIRS=$(patsubst %/Makefile,%,$(wildcard */Makefile))

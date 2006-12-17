@@ -1,4 +1,4 @@
-CXX = g++-4.0
+CXX = g++
 CC = $(CXX)
 LD = $(CXX)
 

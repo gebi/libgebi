@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-// thx to dietlibc 0.30 and 0.27 test/cycles.c
+// thx to dietlibc 0.30 and 0.27 test/cycles.c for the amd64 and ppc implementation
 #if defined (__i386__)
 #define rdtscll(dst) asm volatile ("rdtsc" : "=A" (dst))
 #elif defined (__x86_64__)

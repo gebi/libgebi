@@ -1,3 +1,10 @@
+libgebi-dev (0.10) unstable; urgency=low
+
+  * makefile fixes for broken g++ requirement (thx formorer)
+  * fixed test makefiles to be plattform neutral
+
+ -- Michael Gebetsroither <michael.geb@gmx.at>  Fri,  5 Jan 2007 21:02:31 +0100
+
 libgebi-dev (0.09) unstable; urgency=low
 
   * Added super fast hash function from

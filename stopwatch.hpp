@@ -23,7 +23,7 @@
     dst = ((uint64_t)tbu << 32) | tbl; \
 } while (0)
 #else
-#error "Unimplemented rdtsc"
+gettimeofday(&a,0);
 #endif
 
 

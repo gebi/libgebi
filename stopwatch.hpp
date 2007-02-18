@@ -6,14 +6,17 @@
 // thx to dietlibc 0.30 and 0.27 test/cycles.c for the amd64 and ppc implementation
 #if defined (__i386__)
 #define rdtscll(dst) asm volatile ("rdtsc" : "=A" (dst))
+
 #elif defined (__x86_64__)
 #define rdtscll(dst) do { \
     uint32_t l, h; \
     asm volatile ("rdtsc" : "=a" (l), "=d" (h)); \
     dst = (((uint64_t)h) << 32) | l; \
 } while (0)
+
 #elif defined (__powerpc64__)
 #define rdtscll(dst) asm volatile ("mftb %0" : "=r" (dst))
+
 #elif defined (__powerpc__)
 #define rdtscll(dst) do { \
     uint32_t chk, tbl, tbu; \
@@ -22,6 +25,7 @@
         : "=r" (tbu), "=r" (tbl), "=r" (chk) ); \
     dst = ((uint64_t)tbu << 32) | tbl; \
 } while (0)
+
 #else
 gettimeofday(&a,0);
 #endif

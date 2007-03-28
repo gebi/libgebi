@@ -1,4 +1,4 @@
-#include <gebi/singleton.hpp>
+#include "singleton.hpp"
 using namespace gebi;
 
 #include <iostream>

@@ -9,6 +9,7 @@ namespace gebi
 
 const long double M_PI = 3.1415926535897931;
 
+// compiletime Sin / Cos implementations {{{
 template<unsigned M, unsigned N, unsigned B, unsigned A>
 struct SinCosSeries {
    static double value() {
@@ -55,6 +56,21 @@ struct Cos<B,A,double> {
       return SinCosSeries<1,33,B,A>::value();
    }
 };
+// }}}
+
+// float InvSqrt(float x) {{{
+// InvSqrt from Q3 source with better magic from
+// http://www.lomont.org/Math/Papers/2003/InvSqrt.pdf
+float InvSqrt(float x)
+{
+    float xhalf = 0.5f*x;
+    int i = *(int*)&x;      // get bits for floating value
+    i = 0x5f375a86- (i>>1); // gives initial guess y0
+    x = *(float*)&i;        // convert bits back to float
+    x = x*(1.5f-xhalf*x*x); // Newton step, repeating increases accuracy
+    return x;
+}
+// }}}
 
 } // end namespace gebi
 

@@ -1,3 +1,9 @@
+#ifndef ___hash_hpp___
+#define ___hash_hpp___
+
+namespace gebi
+{
+
 // super fast hash function from http://www.azillionmonkeys.com/qed/hash.html
 //
 //#include "pstdint.h" /* Replace with <stdint.h> if appropriate */
@@ -13,7 +19,11 @@
                        +(uint32_t)(((const uint8_t *)(d))[0]) )
 #endif
 
-uint32_t SuperFastHash (const char * data, int len) {
+#ifndef NULL
+#define NULL ((void*)0)
+#endif
+
+uint32_t qedhash(const char * data, int len) {
     uint32_t hash = len, tmp;
     int rem;
 
@@ -57,3 +67,10 @@ uint32_t SuperFastHash (const char * data, int len) {
 
     return hash;
 }
+
+#undef get16bits
+#undef NULL
+
+}; //end namespace gebi
+
+#endif //___hash_hpp___

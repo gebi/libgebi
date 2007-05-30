@@ -1,0 +1,10 @@
+link_libraries(gebi-static)
+
+include_directories(${CMAKE_SOURCE_DIR})
+file(GLOB TESTS test_*.cpp)
+foreach(i ${TESTS})
+    get_filename_component(i_fn ${i} NAME_WE)
+    message(STATUS "adding test: ${i_fn}")
+    add_executable(${i_fn} ${i})
+    add_test(${i_fn} ${i_fn})
+endforeach(i)

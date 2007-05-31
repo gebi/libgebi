@@ -32,6 +32,6 @@ ftype invsqrt(ftype x) \
 invsqrt_helper(float, long, 0x5f375a86);
 invsqrt_helper(double, int64_t, 0x5fe6ec85e7de30dall);
 
-//#undef invsqrt_helper
+#undef invsqrt_helper
 
 }

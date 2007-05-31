@@ -3,8 +3,6 @@
 #include <math.hpp>
 using namespace gebi;
 
-#include <cmath>
-
 
 BOOST_AUTO_TEST_CASE(SinTest)
 {

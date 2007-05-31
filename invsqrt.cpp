@@ -1,5 +1,6 @@
-//#include "invsqrt_priv.h"
 #include "invsqrt.h"
+#include <stdint.h>
+
 
 namespace gebi
 {
@@ -28,8 +29,8 @@ ftype invsqrt(ftype x) \
     return x; \
 }
 
-invsqrt_helper(float, int, 0x5f375a86);
-invsqrt_helper(double, long, 0x5fe6ec85e7de30da);
+invsqrt_helper(float, long, 0x5f375a86);
+invsqrt_helper(double, int64_t, 0x5fe6ec85e7de30da);
 
 //#undef invsqrt_helper
 

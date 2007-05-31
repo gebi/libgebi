@@ -1,4 +1,5 @@
-link_libraries(gebi-static boost_unit_test_framework)
+link_libraries(gebi-static boost_unit_test_framework-st)
+add_definitions(-DBOOST_TEST_DYN_LINK -DBOOST_AUTO_TEST_MAIN)
 
 include_directories(${CMAKE_SOURCE_DIR})
 file(GLOB TESTS test_*.cpp)

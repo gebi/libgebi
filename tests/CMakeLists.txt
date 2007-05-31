@@ -1,4 +1,4 @@
-link_libraries(gebi-static)
+link_libraries(gebi-static boost_unit_test_framework)
 
 include_directories(${CMAKE_SOURCE_DIR})
 file(GLOB TESTS test_*.cpp)

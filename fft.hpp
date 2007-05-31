@@ -1,11 +1,7 @@
 #ifndef ___fft_hpp___
 #define ___fft_hpp___
 
-#ifdef TEST_COMPILE
-#include "math.hpp"
-#else
-#include <gebi/math.hpp>
-#endif
+#include <math.hpp>
 
 #include <loki/Typelist.h>
 

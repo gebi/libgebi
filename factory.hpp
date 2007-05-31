@@ -1,11 +1,7 @@
 #ifndef factory_h___
 #define factory_h___
 
-#ifdef TEST_COMPILE
-#include "threads.hpp"
-#else
-#include <gebi/threads.hpp>
-#endif
+#include <threads.hpp>
 
 #include <map>
 #include <memory>

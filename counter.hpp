@@ -1,11 +1,7 @@
 #ifndef ___counter_hpp___
 #define ___counter_hpp___
 
-#ifdef TEST_COMPILE
-#include "threads.hpp"
-#else
-#include <gebi/threads.hpp>
-#endif
+#include <threads.hpp>
 
 namespace gebi
 {

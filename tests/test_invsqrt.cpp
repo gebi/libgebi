@@ -1,6 +1,6 @@
 #include <boost/test/auto_unit_test.hpp>
 
-#include "invsqrt.h"
+#include <invsqrt.h>
 using namespace gebi;
 
 #include <cmath>

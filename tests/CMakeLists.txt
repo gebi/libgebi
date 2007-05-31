@@ -1,7 +1,6 @@
 link_libraries(gebi-static boost_unit_test_framework-st)
 add_definitions(-DBOOST_TEST_DYN_LINK -DBOOST_AUTO_TEST_MAIN)
 
-include_directories(${CMAKE_SOURCE_DIR})
 file(GLOB TESTS test_*.cpp)
 foreach(i ${TESTS})
     get_filename_component(i_fn ${i} NAME_WE)

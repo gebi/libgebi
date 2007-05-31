@@ -1,11 +1,7 @@
 #ifndef run_queue_hpp___
 #define run_queue_hpp___
 
-#ifdef TEST_COMPILE
-#include "threads.hpp"
-#else
-#include <gebi/threads.hpp>
-#endif
+#include <threads.hpp>
 
 #include <iostream>
 using std::cout;

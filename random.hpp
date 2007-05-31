@@ -1,11 +1,7 @@
 #ifndef random_hpp___
 #define random_hpp___
 
-#ifdef TEST_COMPILE
-#include "singleton.hpp"
-#else
-#include <gebi/singleton.hpp>
-#endif
+#include <singleton.hpp>
 
 namespace gebi
 {

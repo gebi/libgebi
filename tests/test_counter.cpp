@@ -1,6 +1,6 @@
 #include <boost/test/auto_unit_test.hpp>
 
-#include "counter.hpp"
+#include <counter.hpp>
 using namespace gebi;
 
 

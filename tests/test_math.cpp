@@ -1,6 +1,6 @@
 #include <boost/test/auto_unit_test.hpp>
 
-#include "math.hpp"
+#include <math.hpp>
 using namespace gebi;
 
 #include <cmath>

@@ -1,11 +1,7 @@
 #ifndef singleton_hpp___
 #define singleton_hpp___
 
-#ifdef TEST_COMPILE
-#include "threads.hpp"
-#else
-#include <gebi/threads.hpp>
-#endif
+#include <threads.hpp>
 
 namespace gebi
 {

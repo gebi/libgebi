@@ -12,6 +12,10 @@ using namespace std;
 
 BOOST_AUTO_TEST_CASE(InvSqrtTest)
 {   
-    BOOST_CHECK_EQUAL(invsqrt(1.5f), 0.815361917f);
-    BOOST_CHECK_EQUAL(invsqrt((double)1.5), (double)0.81534821186704765);
+    float invsqrt_float = invsqrt(1.5f);
+    double invsqrt_double = invsqrt((double)1.5);
+    BOOST_CHECK_MESSAGE(invsqrt_float == 0.815361917f || 
+                        invsqrt_float == 0.815361857f, invsqrt_float);
+    BOOST_CHECK_MESSAGE(invsqrt_double == 0.81534821186704765 ||
+                        invsqrt_double == 0.81534821186704765, invsqrt_double);
 }

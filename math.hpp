@@ -9,6 +9,8 @@ const long double M_PI = 3.1415926535897931;
 // compiletime Sin / Cos implementations {{{
 // license: public domain?
 // http://www.ddj.com/dept/cpp/199500857
+// simpler version on (base for ddj.com)
+//  http://ubiety.uwaterloo.ca/~tveldhui/papers/Template-Metaprograms/meta-art.html
 
 template<unsigned M, unsigned N, unsigned B, unsigned A>
 struct SinCosSeries {

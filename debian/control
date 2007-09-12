@@ -4,9 +4,6 @@ Priority: optional
 Maintainer: Michael Gebetsroither <gebi@grml.org>
 Build-Depends: debhelper (>= 4.0.0)
 Standards-Version: 3.7.2
-Homepage: http://hg.grml.org/libgebi-dev/
-XS-Vcs-hg: http://hg.grml.org/libgebi-dev/
-XS-Vcs-Browser: http://hg.grml.org/libgebi-dev/
 
 Package: libgebi-dev
 Section: libdevel

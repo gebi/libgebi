@@ -1,4 +1,4 @@
-link_libraries(gebi-static boost_unit_test_framework-st)
+link_libraries(gebi-static boost_unit_test_framework)
 add_definitions(-DBOOST_TEST_DYN_LINK -DBOOST_AUTO_TEST_MAIN)
 
 file(GLOB TESTS test_*.cpp)

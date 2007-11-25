@@ -25,16 +25,16 @@ typedef Singleton<Test> SingletonTest;
 
 int main()
 {
-  Test *a = &SingletonTest::instance();
+  Test *a = SingletonTest::instance();
   a->printMsg();
 
-  Test *b = &SingletonTest::instance();
+  Test *b = SingletonTest::instance();
   b->printMsg();
 
-  Test c = Singleton<Test, createGamma>::instance();
+  Test* c = Singleton<Test, createGamma>::instance();
   
   a->setMsg("TEEEEEEEEEEST written into a");
   cout << "Message printed from b: ";
   b->printMsg();
-  c.printMsg();
+  c->printMsg();
 }

@@ -60,14 +60,14 @@ namespace gebi
       static LockType lock_;
 
     public:
-      static T& instance()
+      static T* instance()
       {
         if(!instance_) {
           Guard<LockType, LockMutex> guard(lock_);
           if(!instance_)
             instance_ = creationPolicy<T>::create();
         }
-        return *instance_;
+        return instance_;
       }
   };
 

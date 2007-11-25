@@ -14,7 +14,10 @@ int main()
         string in;
         cout <<"> ";
         cin >>in;
+        if(in.empty())
+            break;
         cout <<qedhash(in.c_str(), in.size()) <<endl;
     }
+    cout <<endl;
     return 0;
 }

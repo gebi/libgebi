@@ -10,10 +10,11 @@ using namespace std;
 
 int main()
 {
-    const char arr[] = "abcdefg";
-
-    unsigned tmp = gebi::qedhash(arr, sizeof(arr));
-    cout <<tmp <<endl;
-
+    for(;;) {
+        string in;
+        cout <<"> ";
+        cin >>in;
+        cout <<qedhash(in.c_str(), in.size()) <<endl;
+    }
     return 0;
 }

@@ -1,3 +1,9 @@
+libgebi-dev (0.12) UNRELEASED; urgency=low
+
+  *
+
+ -- Michael Gebetsroither <gebi@grml.org>  Wed, 23 Jan 2008 12:04:46 +0100
+
 libgebi-dev (0.11) unstable; urgency=low
 
   * adding fft implementation

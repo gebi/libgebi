@@ -1,3 +1,9 @@
+cmake_minimum_required(VERSION 3.14) # CMP0083 NEW
+set_property(GLOBAL PROPERTY CXX_STANDARD 17)
+
+#set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+#set_property(GLOBAL PROPERTY POSITION_INDEPENDENT_CODE FALSE)
+
 project(libgebi)
 
 enable_testing()

@@ -2,6 +2,7 @@
 #define ___fft_hpp___
 
 #include <math.hpp>
+#include <utility>
 
 #include <loki/Typelist.h>
 
@@ -22,8 +23,8 @@ void scramble(T* data, unsigned nn)
     j=1;
     for (i=1; i<n; i+=2) {
         if (j>i) {
-            swap(data[j-1], data[i-1]);
-            swap(data[j], data[i]);
+            std::swap(data[j-1], data[i-1]);
+            std::swap(data[j], data[i]);
         }
         m = nn;
         while (m>=2 && j>m) {

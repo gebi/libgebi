@@ -1,4 +1,4 @@
-#include <boost/test/auto_unit_test.hpp>
+#include <boost/test/unit_test.hpp>
 #include <boost/lexical_cast.hpp>
 using boost::lexical_cast;
 
@@ -38,7 +38,7 @@ BOOST_AUTO_TEST_CASE(HashTestB)
 }
 
 BOOST_AUTO_TEST_CASE(HashTestRandom)
-{   
+{
     BOOST_CHECK_EQUAL(qedhash("pG5OSRlkPkDRrgyr", 13), 2235563499);
     BOOST_CHECK_EQUAL(qedhash("BwxHq94NB77GwllN", 13), 1842200859);
     BOOST_CHECK_EQUAL(qedhash("jGT2O760uh9OY0mM", 13), 1513127197);

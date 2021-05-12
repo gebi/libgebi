@@ -15,7 +15,7 @@ namespace gebi
   // ThreadMutex  {{{
 #ifdef _WINDOWS_
   class ThreadMutex
-  { 
+  {
     private:
       CRITICAL_SECTION lock_;
 
@@ -28,7 +28,7 @@ namespace gebi
 
       int aquire()  { EnterCriticalSection(&lock_); return 0; }
       int release() { LeaveCriticalSection(&lock_); return 0; }
-      
+
       int aquireRead()  { EnterCriticalSection(&lock_); return 0; }
       int releaseRead() { LeaveCriticalSection(&lock_); return 0; }
 
@@ -37,7 +37,7 @@ namespace gebi
   };
 #else
   class ThreadMutex
-  { 
+  {
     private:
       pthread_mutex_t lock_;
 
@@ -53,7 +53,7 @@ namespace gebi
 
       int aquireRead()  { return pthread_mutex_lock(&lock_); }
       int releaseRead() { return pthread_mutex_unlock(&lock_); }
-      
+
       int aquireWrite()  { return pthread_mutex_lock(&lock_); }
       int releaseWrite() { return pthread_mutex_unlock(&lock_); }
   };
@@ -62,7 +62,7 @@ namespace gebi
 
   // NullMutex  {{{
   class NullMutex
-  { 
+  {
     private:
       NullMutex(const NullMutex &src);
       NullMutex &operator=(const NullMutex &src);
@@ -84,7 +84,7 @@ namespace gebi
   // RWMutex  {{{
 #ifdef _WINDOWS_
   class RWMutex
-  { 
+  {
     private:
       CRITICAL_SECTION lock_;
 
@@ -97,7 +97,7 @@ namespace gebi
 
       int aquireRead()  { EnterCriticalSection(&lock_); return 0; }
       int releaseRead() { LeaveCriticalSection(&lock_); return 0; }
-      
+
       int aquireWrite()  { EnterCriticalSection(&lock_); return 0; }
       int releaseWrite() { LeaveCriticalSection(&lock_); return 0; }
   };
@@ -156,7 +156,7 @@ namespace gebi
   // class Guard  {{{
   template<typename Lock, template<typename> class LockBridge = LockMutex >
   class Guard : public LockBridge<Lock>
-  { 
+  {
     private:
       Lock &lock_;
       int result_;
@@ -166,19 +166,19 @@ namespace gebi
 
     public:
       Guard(Lock &lock) : lock_(lock)
-        { result_ = aquireLock(lock_); }
+        { result_ = this->aquireLock(lock_); }
 
       ~Guard()
       {
         if(result_ != -1)
-          releaseLock(lock_);
+          this->releaseLock(lock_);
       }
 
-      void aquire() { result_ = aquireLock(lock_); }
+      void aquire() { result_ = this->aquireLock(lock_); }
       void release()
       {
         if(result_ != -1)
-          releaseLock(lock_);
+          this->releaseLock(lock_);
       }
   };
   // }}}

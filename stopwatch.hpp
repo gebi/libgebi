@@ -2,6 +2,7 @@
 #define ___stopwatch_hpp___
 
 #include <iostream>
+#include <cstdint>
 
 // thx to dietlibc 0.30 and 0.27 test/cycles.c for the amd64 and ppc implementation
 #if defined (__i386__)

@@ -1,7 +1,7 @@
 Source: libgebi-dev
 Section: libs
 Priority: optional
-Maintainer: Michael Gebetsroither <gebi@grml.org>
+Maintainer: Michael Gebetsroither <michael@mgeb.org>
 Build-Depends: debhelper (>= 4.0.0)
 Standards-Version: 3.7.2
 

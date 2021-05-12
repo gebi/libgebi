@@ -79,7 +79,6 @@ binary-arch: build install
 #	dh_installcron
 #	dh_installinfo
 	dh_installman
-#	dh_link etc/grml/sh-lib-1.00 etc/grml/sh-lib
 	dh_strip
 	dh_compress
 	dh_fixperms
